@@ -8,8 +8,9 @@ class BoggleBoard
     output_string_alphabet=[]
     alphabet= @alphabet
     alphabet=alphabet.sample(16)
+    alphabet= alphabet.map {|s| s.gsub(/Q/, 'Qu')}
     4.times do
-    output_string_alphabet << alphabet.shift(4).join('') + "\n"
+    output_string_alphabet << alphabet.shift(4).join(" ") + "\n"
     end
     output_string_alphabet
   end
